@@ -1,8 +1,8 @@
 import { Carousel } from "../components/Carousel";
 import Faqs from "../components/Faqs";
 import Gallery from "../components/Gallery";
-import Hero from "../components/hero";
-import Numbers from "../components/numbers";
+import Hero from "../components/Hero";
+import Numbers from "../components/Numbers";
 
 const faqItems = [
   {

@@ -1,5 +1,5 @@
 import FeatureIcons from "../components/FeatureIcons";
-import Hero from "../components/hero";
+import Hero from "../components/Hero";
 
 export default function Instalaciones() {
   return (

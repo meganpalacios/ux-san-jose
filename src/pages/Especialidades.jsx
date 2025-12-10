@@ -1,5 +1,5 @@
 import Card from "../components/Card";
-import Hero from "../components/hero";
+import Hero from "../components/Hero";
 
 const cardItems = [
   {
