@@ -8,6 +8,9 @@ yarn vite
 - React
 - Vite
 - Tailwind CSS
+- Clsx
+- Material UI
+- Vercel
 
 ## Components:
 [ ] nav
