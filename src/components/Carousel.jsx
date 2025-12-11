@@ -59,7 +59,7 @@ export const Carousel = ({ logos, speed = "medium" }) => {
   ));
 
   return (
-    <div className="flex w-full overflow-hidden">
+    <div className="flex w-full overflow-hidden my-8">
       <div className={animatedGroupClass}>{logoItems}</div>
       {extraGroups}
     </div>

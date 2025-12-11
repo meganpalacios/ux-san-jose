@@ -29,45 +29,57 @@ export default function Home() {
         header="Tu sonrisa merece el mejor cuidado"
         subtitle="En el centro dental San José sede San Miguel ofrecemos servicios de calidad y atención de primera."
         cta={
-          <a href="/agendar" className="button-primary">
+          <a href="/agendar" className="main-button">
             Agenda una cita
           </a>
         }
         imageUrl="hero-dental.jpeg"
       />
-      <h2>Sonríe con orgullo</h2>
-      <Numbers
-        items={[
-          { number: "10+", label: "Años de experiencia" },
-          { number: "500+", label: "Pacientes satisfechos" },
-          { number: "20", label: "Especialistas en odontología" },
-        ]}
-      />
-      <h2>Nuestros convenios</h2>
-      <Carousel
-        speed="medium"
-        logos={[
-          { logoUrl: "rimac.svg", alt: "Rímac" },
-          { logoUrl: "pacifico.svg", alt: "Pacífico" },
-          { logoUrl: "la_positiva.png", alt: "La Positiva" },
-          { logoUrl: "mapfre.webp", alt: "Mapfre", noPadding: true },
-          { logoUrl: "sanitas.jpg", alt: "Sanitas" },
-        ]}
-      />
-      <h2>Preguntas frecuentes</h2>
-      {faqItems.map((item, index) => (
-        <Faqs key={index} item={item} />
-      ))}
-      <h2>Conoce nuestras instalaciones</h2>
-      <Gallery
-        items={[
-          { src: "rimac.svg", alt: "Rímac" },
-          { src: "pacifico.svg", alt: "Pacífico" },
-          { src: "la_positiva.png", alt: "La Positiva" },
-          { src: "mapfre.webp", alt: "Mapfre", noPadding: true },
-          { src: "sanitas.jpg", alt: "Sanitas" },
-        ]}
-      />
+      <section className="px-10">
+        <h2 className="text-center text-mobile-4xl md:text-desktop-4xl">
+          Sonríe con orgullo
+        </h2>
+        <Numbers
+          items={[
+            { number: "10+", label: "Años de experiencia" },
+            { number: "500+", label: "Pacientes satisfechos" },
+            { number: "20", label: "Especialistas en odontología" },
+          ]}
+        />
+      </section>
+      <section>
+        <h2 className="text-center text-mobile-4xl md:text-desktop-4xl">
+          Nuestros convenios
+        </h2>
+        <Carousel
+          speed="medium"
+          logos={[
+            { logoUrl: "rimac.svg", alt: "Rímac" },
+            { logoUrl: "pacifico.svg", alt: "Pacífico" },
+            { logoUrl: "la_positiva.png", alt: "La Positiva" },
+            { logoUrl: "mapfre.webp", alt: "Mapfre", noPadding: true },
+            { logoUrl: "sanitas.jpg", alt: "Sanitas" },
+          ]}
+        />
+      </section>
+      <section>
+        <h2>Preguntas frecuentes</h2>
+        {faqItems.map((item, index) => (
+          <Faqs key={index} item={item} />
+        ))}
+      </section>
+      <section>
+        <h2>Conoce nuestras instalaciones</h2>
+        <Gallery
+          items={[
+            { src: "rimac.svg", alt: "Rímac" },
+            { src: "pacifico.svg", alt: "Pacífico" },
+            { src: "la_positiva.png", alt: "La Positiva" },
+            { src: "mapfre.webp", alt: "Mapfre", noPadding: true },
+            { src: "sanitas.jpg", alt: "Sanitas" },
+          ]}
+        />
+      </section>
     </>
   );
 }

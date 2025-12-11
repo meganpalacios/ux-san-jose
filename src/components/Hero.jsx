@@ -1,27 +1,39 @@
 export default function Hero({ header, subtitle, imageUrl, cta }) {
+  const hasImage = Boolean(imageUrl);
+
   return (
     <section
-      className="
-        relative w-full min-h-[60vh] flex flex-col justify-center 
-        px-6 py-20
-      "
+      className={`
+        relative w-full 
+        min-h-[50vh] md:min-h-[70vh]
+        flex flex-col justify-center
+        px-10 py-20 
+        text-black
+      `}
       style={{
-        backgroundImage: `url(${imageUrl})`,
+        backgroundImage: hasImage
+          ? `url(${imageUrl})`
+          : `linear-gradient(135deg, var(--color-blue-200), var(--color-green))`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}>
-      <div className="absolute inset-0 bg-blue-100/40 backdrop-blur-[1px]"></div>
+      {hasImage && (
+        <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]"></div>
+      )}
 
       <div className="relative max-w-3xl">
-        <h1 className="font-bold text-4xl md:text-5xl drop-shadow-md">
+        <h1 className="font-bold text-mobile-5xl md:text-desktop-4xl drop-shadow-md">
           {header}
         </h1>
 
         {subtitle && (
-          <p className="mt-4 text-lg md:text-xl drop-shadow">{subtitle}</p>
+          <p className="mt-4 text-mobile-xl md:text-desktop-xl drop-shadow">
+            {subtitle}
+          </p>
         )}
 
-        {cta && cta}
+        {cta && <div className="mt-6">{cta}</div>}
       </div>
     </section>
   );

@@ -119,7 +119,7 @@
   }
 
   h2 {
-    @apply font-medium text-mobile-3xl md:text-desktop-3xl leading-[105%] my-4;
+    @apply font-medium text-center text-mobile-4xl md:text-desktop-4xl leading-[105%] my-4;
   }
 
   h3 {
@@ -146,6 +146,10 @@
   .label,
   label {
     @apply font-medium text-sm md:text-xs leading-[160%];
+  }
+
+  section {
+    @apply mb-8;
   }
 }
 
@@ -177,7 +181,40 @@
   }
 
   .main-button {
-    @apply h-12 px-4 flex items-center justify-center rounded-full text-sm;
+    @apply inline-flex items-center justify-center
+      font-avant font-medium
+      text-base md:text-lg
+      px-6 py-3
+      rounded-full
+      text-off-white
+      transition-all duration-300
+      shadow-md
+      no-underline;
+
+    background-image: linear-gradient(
+      135deg,
+      var(--color-blue-200),
+      var(--color-green)
+    );
+    background-size: 200% 200%;
+  }
+
+  .main-button:hover {
+    background-position: right center;
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    @apply shadow-lg;
+  }
+
+  .main-button:focus-visible {
+    outline: 3px solid var(--color-purple-300);
+    outline-offset: 3px;
+    transform: translateY(-1px);
+  }
+
+  .main-button:active {
+    transform: translateY(0px) scale(0.98);
+    filter: brightness(0.95);
   }
 
   .main-link {
