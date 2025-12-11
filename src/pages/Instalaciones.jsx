@@ -1,5 +1,10 @@
 import FeatureIcons from "../components/FeatureIcons";
 import Hero from "../components/Hero";
+import WifiIcon from "@mui/icons-material/Wifi";
+import BatteryChargingFullIcon from "@mui/icons-material/BatteryChargingFull";
+import EmojiFoodBeverageIcon from "@mui/icons-material/EmojiFoodBeverage";
+import WorkIcon from "@mui/icons-material/Work";
+import TvIcon from "@mui/icons-material/Tv";
 
 export default function Instalaciones() {
   return (
@@ -11,13 +16,32 @@ export default function Instalaciones() {
       />
       <h2>Equipo médico</h2>
       <h2>Consultorio</h2>
-      <FeatureIcons items={[
-        { label: "Wi-Fi gratuito" },
-        { label: "Estación de carga" },
-        { label: "Estación de té" },
-        { label: "Mini coworking" },
-        { label: "TV en sala de espera" },
-      ]} />
+      <section>
+        <FeatureIcons
+          items={[
+            {
+              label: "Wi-Fi gratuito",
+              icon: <WifiIcon className="text-[3.5rem]!" />,
+            },
+            {
+              label: "Estación de carga",
+              icon: <BatteryChargingFullIcon className="text-[3.5rem]!" />,
+            },
+            {
+              label: "Estación de té",
+              icon: <EmojiFoodBeverageIcon className="text-[3.5rem]!" />,
+            },
+            {
+              label: "Mini coworking",
+              icon: <WorkIcon className="text-[3.5rem]!" />,
+            },
+            {
+              label: "TV en sala de espera",
+              icon: <TvIcon className="text-[3.5rem]!" />,
+            },
+          ]}
+        />
+      </section>
     </>
   );
 }

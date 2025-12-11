@@ -7,7 +7,7 @@ export default function Hero({ header, subtitle, imageUrl, cta }) {
         relative w-full 
         min-h-[50vh] md:min-h-[70vh]
         flex flex-col justify-center
-        px-10 py-20 
+        px-10 md:px-25 py-20 
         text-black
       `}
       style={{

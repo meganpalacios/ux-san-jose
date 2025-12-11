@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 export default function Numbers({ items }) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 place-items-center">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-x-20 items-baseline">
       {items.map((item, index) => (
         <div
           key={index}

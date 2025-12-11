@@ -149,7 +149,7 @@
   }
 
   section {
-    @apply mb-8;
+    @apply mb-16 md:mb-24 px-10 md:px-25;
   }
 }
 

@@ -35,7 +35,7 @@ export default function Home() {
         }
         imageUrl="hero-dental.jpeg"
       />
-      <section className="px-10">
+      <section>
         <h2 className="text-center text-mobile-4xl md:text-desktop-4xl">
           Sonríe con orgullo
         </h2>
@@ -47,7 +47,7 @@ export default function Home() {
           ]}
         />
       </section>
-      <section>
+      <section className="px-0">
         <h2 className="text-center text-mobile-4xl md:text-desktop-4xl">
           Nuestros convenios
         </h2>
@@ -63,13 +63,13 @@ export default function Home() {
         />
       </section>
       <section>
-        <h2>Preguntas frecuentes</h2>
+        <h2 className="mb-10">Preguntas frecuentes</h2>
         {faqItems.map((item, index) => (
           <Faqs key={index} item={item} />
         ))}
       </section>
       <section>
-        <h2>Conoce nuestras instalaciones</h2>
+        <h2 className="mb-10">Conoce nuestras instalaciones</h2>
         <Gallery
           items={[
             { src: "rimac.svg", alt: "Rímac" },

@@ -14,7 +14,7 @@ export default function Faqs({ item }) {
       open={open}
       onToggle={handleToggle}
       className={clsx(
-        "w-full rounded-xl border border-blue-200 bg-white transition-all my-4",
+        "max-w-[80vw] m-auto rounded-xl border border-blue-200 bg-white transition-all my-4",
         open ? "shadow-md" : "shadow-sm"
       )}
     >
