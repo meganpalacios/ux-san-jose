@@ -68,6 +68,7 @@ export default function Navigation() {
         </div>
 
         <ul className="flex flex-col gap-6">
+          <li><a className="nav-link" href="/">Inicio</a></li>
           <li>
             <span
               className="nav-link flex items-center gap-1 cursor-pointer"
