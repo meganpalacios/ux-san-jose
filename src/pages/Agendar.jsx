@@ -128,7 +128,7 @@ export default function Agendar() {
               Agenda tu cita por la web de manera fácil y rápida
             </h2>
 
-            <p className="text-charcoal-300 text-sm md:text-base mb-6">
+            <p className="text-charcoal-300 text-center text-sm md:text-base mb-6">
               Crea una cuenta para llevar el control de tus citas o inicia sesión
               si ya formas parte de nuestros pacientes.
             </p>
