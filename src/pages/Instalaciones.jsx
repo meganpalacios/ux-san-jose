@@ -6,6 +6,7 @@ import EmojiFoodBeverageIcon from "@mui/icons-material/EmojiFoodBeverage";
 import WorkIcon from "@mui/icons-material/Work";
 import TvIcon from "@mui/icons-material/Tv";
 import Gallery from "../components/Gallery";
+import Map from "../components/Map";
 
 export default function Instalaciones() {
   return (
@@ -60,6 +61,10 @@ export default function Instalaciones() {
             },
           ]}
         />
+      </section>
+      <section>
+        <h2>Encuéntranos</h2>
+        <Map />
       </section>
     </>
   );
