@@ -13,13 +13,14 @@ yarn vite
 - Vercel
 
 ## Components:
-[ ] nav
-[ ] hero
-[ ] numbers/icons
-[ ] map
-[ ] faq
-[ ] gallery
+[X] nav
+[X] hero
+[X] numbers/icons
+[X] map
+[X] faq
+[X] carousel
+[X] gallery
 [ ] whatsapp cta
-[ ] cards
-[ ] testimonial
-[ ] 
+[X] cards
+[X] testimonial
+[X] map

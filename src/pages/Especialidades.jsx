@@ -1,5 +1,6 @@
 import Card from "../components/Card";
 import Hero from "../components/Hero";
+import Map from "../components/Map";
 
 const cardItems = [
   {
@@ -53,15 +54,13 @@ export default function Especialidades() {
         header="Nuestras especialidades y servicios"
         imageUrl="hero-dental.jpeg"
       />
-      {cardItems.map((items, index) => (
-        <Card
-          key={index}
-          title={items.title}
-          description={items.description}
-          imgUrl={items.imgUrl}
-          link={items.link}
-        />
-      ))}
+      <section>
+        <Card items={cardItems} buttonName="Saber más" />
+      </section>
+      <section>
+        <h2>Encuéntranos</h2>
+        <Map />
+      </section>
     </>
   );
 }

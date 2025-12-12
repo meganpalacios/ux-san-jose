@@ -3,6 +3,7 @@ import Faqs from "../components/Faqs";
 import Gallery from "../components/Gallery";
 import Hero from "../components/Hero";
 import Numbers from "../components/Numbers";
+import Map from "../components/Map";
 
 const faqItems = [
   {
@@ -47,6 +48,10 @@ export default function Home() {
           ]}
         />
       </section>
+      <section>
+        <h2>Encuéntranos</h2>
+        <Map />
+      </section>
       <section className="px-0">
         <h2 className="text-center text-mobile-4xl md:text-desktop-4xl">
           Nuestros convenios
@@ -77,6 +82,17 @@ export default function Home() {
             { src: "la_positiva.png", alt: "La Positiva" },
             { src: "mapfre.webp", alt: "Mapfre", noPadding: true },
             { src: "sanitas.jpg", alt: "Sanitas" },
+          ]}
+        />
+
+        <Gallery
+          variant="secondary"
+          items={[
+            { src: "/instalaciones/fachada.jpg", alt: "Fachada" },
+            { src: "/instalaciones/recepcion.jpg", alt: "Recepción" },
+            { src: "/instalaciones/unidad-1.jpg", alt: "Unidad odontológica" },
+            { src: "/instalaciones/unidad-2.jpg", alt: "Unidad odontológica" },
+            { src: "/instalaciones/recepcion.jpg", alt: "Recepción" },
           ]}
         />
       </section>

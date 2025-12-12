@@ -5,6 +5,7 @@ import BatteryChargingFullIcon from "@mui/icons-material/BatteryChargingFull";
 import EmojiFoodBeverageIcon from "@mui/icons-material/EmojiFoodBeverage";
 import WorkIcon from "@mui/icons-material/Work";
 import TvIcon from "@mui/icons-material/Tv";
+import Gallery from "../components/Gallery";
 
 export default function Instalaciones() {
   return (
@@ -15,7 +16,25 @@ export default function Instalaciones() {
         imageUrl="hero-dental.jpeg"
       />
       <h2>Equipo médico</h2>
+      <Gallery
+        items={[
+          { src: "/instalaciones/fachada.jpg", alt: "Fachada" },
+          { src: "/instalaciones/recepcion.jpg", alt: "Recepción" },
+          { src: "/instalaciones/unidad-1.jpg", alt: "Unidad odontológica" },
+          { src: "/instalaciones/unidad-2.jpg", alt: "Unidad odontológica" },
+          { src: "/instalaciones/recepcion.jpg", alt: "Recepción" },
+        ]}
+      />
       <h2>Consultorio</h2>
+      <Gallery
+        items={[
+          { src: "/instalaciones/fachada.jpg", alt: "Fachada" },
+          { src: "/instalaciones/recepcion.jpg", alt: "Recepción" },
+          { src: "/instalaciones/unidad-1.jpg", alt: "Unidad odontológica" },
+          { src: "/instalaciones/unidad-2.jpg", alt: "Unidad odontológica" },
+          { src: "/instalaciones/recepcion.jpg", alt: "Recepción" },
+        ]}
+      />
       <section>
         <FeatureIcons
           items={[
