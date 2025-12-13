@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { auth } from "../firebase/firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -7,6 +10,15 @@ import clsx from "clsx";
 export default function Navigation() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isOpenSecondary, setIsOpenSecondary] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsub();
+  }, []);
 
   return (
     <nav className="bg-white w-full shadow-sm relative">
@@ -25,15 +37,42 @@ export default function Navigation() {
           </span>
           {isOpenSecondary && (
             <ul className="pl-4 mt-2 flex flex-col">
-              <a className="nav-link" href="/instalaciones">Instalaciones</a>
-              <a className="nav-link" href="/doctores">Nuestros doctores</a>
+              <a className="nav-link" href="/instalaciones">
+                Instalaciones
+              </a>
+              <a className="nav-link" href="/doctores">
+                Nuestros doctores
+              </a>
             </ul>
           )}
         </li>
 
-        <li><a className="nav-link" href="/especialidades">Especialidades</a></li>
-        <li><a className="nav-link" href="/agendar">Agenda una cita</a></li>
-        <li><a className="main-button" href="/iniciar-sesion">Iniciar sesión</a></li>
+        <li>
+          <a className="nav-link" href="/especialidades">
+            Especialidades
+          </a>
+        </li>
+        <li>
+          <a className="nav-link" href="/agendar">
+            Agenda una cita
+          </a>
+        </li>
+        {user ? (
+          <li>
+            <a
+              href="/perfil"
+              className="text-blue-500 hover:text-blue-600 cursor-pointer transition-colors">
+              <AccountCircleIcon fontSize="large" />
+              <span className="ml-2">{user.displayName}</span>
+            </a>
+          </li>
+        ) : (
+          <li>
+            <a className="main-button" href="/iniciar-sesion">
+              Iniciar sesión
+            </a>
+          </li>
+        )}
       </ul>
 
       <div className="md:hidden flex justify-between items-center p-6">
@@ -57,8 +96,7 @@ export default function Navigation() {
         className={clsx(
           "fixed top-0 right-0 h-full w-[70%] max-w-[320px] bg-white z-50 shadow-xl p-6 transform transition-transform duration-300",
           isOpenMenu ? "translate-x-0" : "translate-x-full"
-        )}
-      >
+        )}>
         <div className="flex justify-between items-center mb-8">
           <h2 className="font-bold text-lg">Menú</h2>
           <CloseIcon
@@ -68,7 +106,11 @@ export default function Navigation() {
         </div>
 
         <ul className="flex flex-col gap-6">
-          <li><a className="nav-link" href="/">Inicio</a></li>
+          <li>
+            <a className="nav-link" href="/">
+              Inicio
+            </a>
+          </li>
           <li>
             <span
               className="nav-link flex items-center gap-1 cursor-pointer"
@@ -78,15 +120,42 @@ export default function Navigation() {
 
             {isOpenSecondary && (
               <ul className="pl-4 mt-2 flex flex-col gap-2">
-                <a className="nav-link" href="/instalaciones">Instalaciones</a>
-                <a className="nav-link" href="/doctores">Nuestros doctores</a>
+                <a className="nav-link" href="/instalaciones">
+                  Instalaciones
+                </a>
+                <a className="nav-link" href="/doctores">
+                  Nuestros doctores
+                </a>
               </ul>
             )}
           </li>
 
-          <li><a className="nav-link" href="/especialidades">Especialidades</a></li>
-          <li><a className="nav-link" href="/agendar">Agenda una cita</a></li>
-          <li><a className="main-button" href="/iniciar-sesion">Iniciar sesión</a></li>
+          <li>
+            <a className="nav-link" href="/especialidades">
+              Especialidades
+            </a>
+          </li>
+          <li>
+            <a className="nav-link" href="/agendar">
+              Agenda una cita
+            </a>
+          </li>
+          {user ? (
+            <li>
+              <a
+                href="/perfil"
+                className="text-blue-500 hover:text-blue-600 cursor-pointer transition-colors">
+                <AccountCircleIcon fontSize="large" />
+                <span className="ml-2">{user.displayName}</span>
+              </a>
+            </li>
+          ) : (
+            <li>
+              <a className="main-button" href="/iniciar-sesion">
+                Iniciar sesión
+              </a>
+            </li>
+          )}
         </ul>
       </div>
     </nav>
