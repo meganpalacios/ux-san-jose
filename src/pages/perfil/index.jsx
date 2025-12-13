@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { auth } from "../../firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 import DashboardCard from "../../components/DashboardCard";
 
 export default function Dashboard() {
+  const navigate = useNavigate();
   const [userName, setUserName] = useState("");
 
   useEffect(() => {
@@ -21,6 +23,18 @@ export default function Dashboard() {
   }, []);
 
   const appointment = JSON.parse(localStorage.getItem("appointment"));
+  const deleteAppointment = () => {
+    localStorage.removeItem("appointment");
+    window.location.reload();
+  }
+
+  const handleAppointment = () => {
+    if (appointment) {
+      alert("Ya tienes una cita programada. Por favor, cancela o reprograma tu cita existente antes de agendar una nueva.");
+    } else {
+      navigate("/perfil/agendar_cita")
+    }
+  }
 
   const meses = {
     "01": "Enero",
@@ -57,6 +71,7 @@ export default function Dashboard() {
             description="Solicita una nueva cita"
             imageBox
             link="/perfil/agendar_cita"
+            onClick={handleAppointment}
           />
 
           <DashboardCard
@@ -79,7 +94,7 @@ export default function Dashboard() {
                     <button className="secondary-button text-base">
                       Reagendar cita
                     </button>
-                    <button className="secondary-button bg-red-500 hover:bg-red-600 text-base">
+                    <button className="secondary-button bg-red-500 hover:bg-red-600 text-base" onClick={deleteAppointment}>
                       Cancelar cita
                     </button>
                   </div>

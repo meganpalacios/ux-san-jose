@@ -7,6 +7,7 @@ export default function DashboardCard({
   imageBox = false,
   link,
   modal,
+  onClick,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -22,7 +23,7 @@ export default function DashboardCard({
           hover:shadow-md hover:border-blue-400
           active:scale-[0.98]
         "
-      onClick={modal && toggleModal}>
+      onClick={modal ? toggleModal : onClick}>
       <div className="flex gap-4 items-start">
         {imageBox && (
           <div className="w-16 h-16 rounded-xl bg-charcoal-100/40" />
@@ -49,7 +50,7 @@ export default function DashboardCard({
 
   return (
     <>
-      {link ? <a href={link} className="no-underline">{card}</a> : card}
+      {!onClick && link ? <a href={link} className="no-underline">{card}</a> : card}
       {isModalOpen && modal && (
         <div
           className="
