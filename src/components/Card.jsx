@@ -15,10 +15,10 @@ export default function Card({ items, buttonName }) {
             md:max-w-lg
           "
         >
-          <div className="w-full bg-charcoal-100/40 aspect-2/1">
-            {item.image && (
+          <div className="w-full aspect-2/1">
+            {item.imgUrl && (
               <img
-                src={item.image}
+                src={item.imgUrl}
                 alt={item.title}
                 className="w-full h-full object-cover"
               />
