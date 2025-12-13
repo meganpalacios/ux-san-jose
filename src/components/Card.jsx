@@ -13,8 +13,7 @@ export default function Card({ items, buttonName }) {
             shadow-sm
             max-w-[518px]
             md:max-w-lg
-          "
-        >
+          ">
           <div className="w-full aspect-2/1">
             {item.imgUrl && (
               <img
@@ -36,18 +35,19 @@ export default function Card({ items, buttonName }) {
               </p>
             </div>
 
-            <a
-              href={item.link}
-              className="
+            {buttonName && item.link && (
+              <a
+                href={item.link}
+                className="
                 shrink-0 px-4 py-2
                 rounded-full bg-blue-200 text-black 
                 text-sm md:text-base 
                 font-medium
                 hover:bg-blue-300 transition
-              "
-            >
-              {buttonName || "Ver más"}
-            </a>
+              ">
+                {buttonName || "Ver más"}
+              </a>
+            )}
           </div>
         </article>
       ))}

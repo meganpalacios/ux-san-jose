@@ -8,51 +8,51 @@ const cardItems = [
     title: "Carlos Jibaja",
     description:
       "Especialista en Ortodoncia con más de 10 años de experiencia en la corrección de la posición dental y mejora estética.",
-    imgUrl: "/cards/ortodoncia.jpg",
+    imgUrl: "/doctores/carlos-jibaja.jpg",
     link: "/especialidades/ortodoncia",
   },
   {
     title: "Ana Martínez",
     description:
       "Especialista en Endodoncia con amplia experiencia en tratamientos para salvar dientes naturales.",
-    imgUrl: "/cards/endodoncia.jpg",
+    imgUrl: "/doctores/ana-martinez.jpeg",
     link: "/especialidades/endodoncia",
   },
   {
     title: "Luis Gómez",
     description:
       "Especialista en Implantes Dentales con amplia experiencia en la recuperación de funcionalidad y estética de la sonrisa.",
-    imgUrl: "/cards/implantes.jpg",
+    imgUrl: "/doctores/luis-gomez.jpg",
     link: "/especialidades/implantes-dentales",
   },
   {
     title: "María Rodríguez",
     description:
       "Especialista en Odontopediatría con un enfoque amigable para el cuidado de la salud bucal de los más pequeños.",
-    imgUrl: "/cards/odontopediatria.jpg",
+    imgUrl: "/doctores/maria-rodriguez.jpg",
     link: "/especialidades/odontopediatria",
   },
   {
     title: "Sofía López",
     description:
       "Especialista en Periodoncia con amplia experiencia en el mantenimiento de la salud de las encías y prevención de enfermedades periodontales.",
-    imgUrl: "/cards/periodoncia.jpg",
+    imgUrl: "/doctores/sofia-lopez.jpg",
     link: "/especialidades/periodoncia",
   },
   {
     title: "Miguel Fernández",
     description:
       "Cirujano dental con gran experiencia en procedimientos quirúrgicos para mejorar la salud bucal y el bienestar general.",
-    imgUrl: "/cards/cirugia.jpg",
+    imgUrl: "/doctores/miguel-fernandez.jpeg",
     link: "/especialidades/cirugia",
   },
 ];
 
-export default function Especialidades() {
+export default function Doctores() {
   return (
     <>
       <Hero
-        header="Nuestras especialidades y servicios"
+        header="Nuestros doctores"
         imageUrl="hero-dental.jpeg"
       />
       <section>
