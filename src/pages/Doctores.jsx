@@ -62,7 +62,7 @@ export default function Doctores() {
         imageUrl="hero-dental.jpeg"
       />
       <section>
-        <Card items={cardItems} buttonName="Agendar" />
+        <Card items={cardItems} buttonName="Agendar" leadToBooking={true} />
       </section>
       <section>
         <h2>Encuéntranos</h2>

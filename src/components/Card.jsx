@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export default function Card({ items, buttonName }) {
+export default function Card({ items, buttonName, leadToBooking }) {
   const navigate = useNavigate();
   const bookWith = (doctor) => {
     localStorage.setItem("bookWith", doctor);
@@ -42,7 +42,7 @@ export default function Card({ items, buttonName }) {
               </p>
             </div>
 
-            {buttonName && item.link && (
+            {leadToBooking && buttonName && item.link && (
               <button
                 className="
                 shrink-0 px-4 py-2
@@ -54,6 +54,20 @@ export default function Card({ items, buttonName }) {
                 onClick={() => bookWith(item.id)}>
                 {buttonName || "Ver más"}
               </button>
+            )}
+
+            {!leadToBooking && buttonName && item.link && (
+              <a
+                className="
+                shrink-0 px-4 py-2
+                rounded-full bg-blue-200 text-black 
+                text-sm md:text-base 
+                font-medium
+                hover:bg-blue-300 transition
+              "
+                href={item.link}>
+                {buttonName || "Ver más"}
+              </a>
             )}
           </div>
         </article>

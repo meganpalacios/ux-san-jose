@@ -12,6 +12,11 @@ import Dashboard from "./pages/perfil";
 import AgendarCita from "./pages/perfil/AgendarCita";
 import Historial from "./pages/perfil/Historial";
 import Ortodoncia from "./pages/especialidades/Ortodoncia";
+import Periodoncia from "./pages/especialidades/Periodoncia";
+import Endodoncia from "./pages/especialidades/Endodoncia";
+import Implantes from "./pages/especialidades/Implantes";
+import Odontopediatria from "./pages/especialidades/Odontopediatria";
+import Cirugia from "./pages/especialidades/Cirugia";
 
 function App() {
   return (
@@ -23,6 +28,11 @@ function App() {
           <Route path="/doctores" element={<Doctores />} />
           <Route path="/especialidades" element={<Especialidades />} />
           <Route path="/especialidades/ortodoncia" element={<Ortodoncia />} />
+          <Route path="/especialidades/periodoncia" element={<Periodoncia />} />
+          <Route path="/especialidades/endodoncia" element={<Endodoncia />} />
+          <Route path="/especialidades/implantes-dentales" element={<Implantes />} />
+          <Route path="/especialidades/odontopediatria" element={<Odontopediatria />} />
+          <Route path="/especialidades/cirugia" element={<Cirugia />} />
           <Route path="/agendar" element={<Agendar />} />
           <Route path="/crear-cuenta" element={<CrearCuenta />} />
           <Route path="/iniciar-sesion" element={<Ingresar />} />

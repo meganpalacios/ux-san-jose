@@ -16,17 +16,7 @@ export default function Instalaciones() {
         subtitle="Tecnología de punta para brindar el mejor cuidado a nuestros pacientes."
         imageUrl="hero-dental.jpeg"
       />
-      <h2>Equipo médico</h2>
-      <Gallery
-        items={[
-          { src: "/instalaciones/fachada.jpg", alt: "Fachada" },
-          { src: "/instalaciones/recepcion.jpg", alt: "Recepción" },
-          { src: "/instalaciones/unidad-1.jpg", alt: "Unidad odontológica" },
-          { src: "/instalaciones/unidad-2.jpg", alt: "Unidad odontológica" },
-          { src: "/instalaciones/recepcion.jpg", alt: "Recepción" },
-        ]}
-      />
-      <h2>Consultorio</h2>
+      <h2 className="mb-10">Consultorio</h2>
       <Gallery
         items={[
           { src: "/instalaciones/fachada.jpg", alt: "Fachada" },

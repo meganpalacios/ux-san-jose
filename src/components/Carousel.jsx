@@ -1,17 +1,5 @@
 import clsx from "clsx";
 
-// interface LogoItem {
-//   logoUrl: string;
-//   alt: string;
-//   href?: string;
-//   title?: string;
-// }
-// export interface LogoCarouselProps {
-//   logos: LogoItem[];
-//   speed?: "slow" | "medium" | "fast";
-//   className?: string;
-// }
-
 export const Carousel = ({ logos, speed = "medium" }) => {
   const minimumLogos = 14;
   const extras = Math.ceil(minimumLogos / logos.length) - 1;
