@@ -1,11 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { auth } from "../firebase/firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 import Hero from "../components/Hero";
 import Map from "../components/Map";
 
 export default function Agendar() {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsub();
+  }, []);
 
   const toggleModal = () => setIsModalOpen((prev) => !prev);
+
+  const handleBookingClick = () => {
+    if (user) {
+      navigate("/perfil");
+    } else {
+      toggleModal();
+    }
+  };
 
   return (
     <>
@@ -19,39 +40,43 @@ export default function Agendar() {
           <header className="text-center space-y-3">
             <h2>Canales de atención</h2>
             <p className="text-charcoal-300 text-sm md:text-base">
-              Estamos listos para ayudarte a agendar tu cita por el canal que te resulte más cómodo.
+              Estamos listos para ayudarte a agendar tu cita por el canal que te
+              resulte más cómodo.
             </p>
           </header>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <article className="rounded-3xl bg-white border border-charcoal-100 p-6 shadow-sm flex flex-col justify-between">
               <div>
-                <h3 className="font-medium text-lg text-black mb-2">Teléfono</h3>
+                <h3 className="font-medium text-lg text-black mb-2">
+                  Teléfono
+                </h3>
                 <p className="text-charcoal-300 text-sm md:text-base">
                   Llámanos y agenda tu cita con nuestro equipo de recepción.
                 </p>
               </div>
               <a
                 href="tel:+51991780763"
-                className="main-link mt-4 w-full justify-center"
-              >
+                className="main-link mt-4 w-full justify-center">
                 Llamar al 991 780 763
               </a>
             </article>
 
             <article className="rounded-3xl bg-white border border-charcoal-100 p-6 shadow-sm flex flex-col justify-between">
               <div>
-                <h3 className="font-medium text-lg text-black mb-2">WhatsApp</h3>
+                <h3 className="font-medium text-lg text-black mb-2">
+                  WhatsApp
+                </h3>
                 <p className="text-charcoal-300 text-sm md:text-base">
-                  Escríbenos por WhatsApp para coordinar tu cita de forma rápida.
+                  Escríbenos por WhatsApp para coordinar tu cita de forma
+                  rápida.
                 </p>
               </div>
               <a
                 href="https://wa.me/51991780763"
                 target="_blank"
                 rel="noreferrer"
-                className="main-link mt-4 w-full justify-center"
-              >
+                className="main-link mt-4 w-full justify-center">
                 Abrir WhatsApp
               </a>
             </article>
@@ -62,14 +87,14 @@ export default function Agendar() {
                   Portal web
                 </h3>
                 <p className="text-charcoal-300 text-sm md:text-base">
-                  Crea una cuenta o inicia sesión para gestionar tus citas en línea.
+                  Crea una cuenta o inicia sesión para gestionar tus citas en
+                  línea.
                 </p>
               </div>
               <button
                 type="button"
-                onClick={toggleModal}
-                className="main-button mt-4 w-full"
-              >
+                onClick={handleBookingClick}
+                className="main-button mt-4 w-full">
                 Agenda por web
               </button>
             </article>
@@ -83,7 +108,8 @@ export default function Agendar() {
               Av. Rafael Escardó 771, San Miguel
             </p>
             <p className="text-charcoal-300 text-sm">
-              Te esperamos para ayudarte a encontrar el tratamiento ideal para ti.
+              Te esperamos para ayudarte a encontrar el tratamiento ideal para
+              ti.
             </p>
             <Map />
           </section>
@@ -97,8 +123,7 @@ export default function Agendar() {
             flex items-center justify-center
             bg-black/40 backdrop-blur-sm
           "
-          onClick={toggleModal}
-        >
+          onClick={toggleModal}>
           <div
             className="
               relative w-full max-w-lg mx-4
@@ -106,8 +131,7 @@ export default function Agendar() {
               p-6 md:p-8
               shadow-xl
             "
-            onClick={(e) => e.stopPropagation()}
-          >
+            onClick={(e) => e.stopPropagation()}>
             <button
               type="button"
               className="
@@ -119,8 +143,7 @@ export default function Agendar() {
                 transition-colors
               "
               onClick={toggleModal}
-              aria-label="Cerrar"
-            >
+              aria-label="Cerrar">
               ✕
             </button>
 
@@ -129,12 +152,14 @@ export default function Agendar() {
             </h2>
 
             <p className="text-charcoal-300 text-center text-sm md:text-base mb-6">
-              Crea una cuenta para llevar el control de tus citas o inicia sesión
-              si ya formas parte de nuestros pacientes.
+              Crea una cuenta para llevar el control de tus citas o inicia
+              sesión si ya formas parte de nuestros pacientes.
             </p>
 
             <div className="space-y-4">
-              <a href="/crear-cuenta" className="main-button w-full text-center">
+              <a
+                href="/crear-cuenta"
+                className="main-button w-full text-center">
                 Crear una cuenta
               </a>
 
