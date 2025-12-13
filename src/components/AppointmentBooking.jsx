@@ -9,6 +9,7 @@ const AppointmentBooking = ({ doctors }) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
   const [currentMonth, setCurrentMonth] = useState(new Date(2025, 11));
+  const isReschedule = localStorage.getItem("reschedule") === "true";
 
   useEffect(() => {
     const bookWith = localStorage.getItem("bookWith");
@@ -21,14 +22,63 @@ const AppointmentBooking = ({ doctors }) => {
     }
   }, [doctors]);
 
+  useEffect(() => {
+    const isReschedule = localStorage.getItem("reschedule") === "true";
+
+    if (isReschedule) {
+      // Modo reschedule: cargar toda la cita
+      const appointmentData = localStorage.getItem("appointment");
+      if (appointmentData && doctors.length > 0) {
+        try {
+          const appointment = JSON.parse(appointmentData);
+
+          // Establecer doctor
+          const doctor = doctors.find((d) => d.id === appointment.doctorId.id);
+          if (doctor) {
+            setSelectedDoctor(doctor);
+          }
+
+          // Establecer fecha
+          if (appointment.date) {
+            const [year, month, day] = appointment.date.split("-");
+            const date = new Date(year, parseInt(month) - 1, parseInt(day));
+            setSelectedDate(date);
+            setCurrentMonth(new Date(date.getFullYear(), date.getMonth()));
+          }
+
+          // Establecer hora
+          if (appointment.time) {
+            setSelectedTime(appointment.time);
+          }
+        } catch (error) {
+          console.error("Error parsing appointment data:", error);
+        }
+      }
+    } else {
+      // Modo booking normal: solo cargar doctor si existe
+      const bookWith = localStorage.getItem("bookWith");
+      if (bookWith && doctors.length > 0) {
+        const doctor = doctors.find((d) => d.id === bookWith);
+        if (doctor) {
+          setSelectedDoctor(doctor);
+          localStorage.removeItem("bookWith");
+        }
+      }
+    }
+  }, [doctors]);
+
   const saveDate = () => {
-    localStorage.setItem("appointment", JSON.stringify({
-      doctorId: selectedDoctor,
-      date: selectedDate.toISOString().split("T")[0],
-      time: selectedTime,
-    }));
+    localStorage.setItem(
+      "appointment",
+      JSON.stringify({
+        doctorId: selectedDoctor,
+        date: selectedDate.toISOString().split("T")[0],
+        time: selectedTime,
+      })
+    );
+    localStorage.removeItem("reschedule");
     navigate("/perfil");
-  }
+  };
 
   // Festivos peruanos (2025-2026)
   const holidays = [
@@ -167,7 +217,12 @@ const AppointmentBooking = ({ doctors }) => {
 
   return (
     <div className="max-w-3xl mx-auto p-6 space-y-8">
-      <Breadcrumb paths={{ parent: "Perfil", child: "Agendar Cita" }} />
+      {isReschedule ? (
+        <Breadcrumb paths={{ parent: "Perfil", child: "Reagendar Cita" }} />
+      ) : (
+        <Breadcrumb paths={{ parent: "Perfil", child: "Agendar Cita" }} />
+      )}
+
       <div>
         <p className="text-2xl font-light mb-4">Doctor</p>
         <div className="relative min-w-fit max-w-[50vw] md:max-w-[30vw]">
@@ -278,7 +333,9 @@ const AppointmentBooking = ({ doctors }) => {
       )}
 
       {selectedDoctor && selectedDate && selectedTime && (
-        <button onClick={saveDate} className="w-fit py-4 px-8 bg-black text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-colors">
+        <button
+          onClick={saveDate}
+          className="w-fit py-4 px-8 bg-black text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-colors">
           Confirmar Cita
         </button>
       )}

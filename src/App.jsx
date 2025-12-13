@@ -27,7 +27,7 @@ function App() {
           <Route path="/crear-cuenta" element={<CrearCuenta />} />
           <Route path="/iniciar-sesion" element={<Ingresar />} />
           <Route path="/perfil" element={<Dashboard />} />
-          <Route path="/perfil/agendar_cita" element={<AgendarCita />} />
+          <Route path="/perfil/agendar-cita" element={<AgendarCita />} />
           <Route path="/perfil/historial" element={<Historial />} />
         </Route>
       </Routes>

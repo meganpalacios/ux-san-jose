@@ -32,8 +32,13 @@ export default function Dashboard() {
     if (appointment) {
       alert("Ya tienes una cita programada. Por favor, cancela o reprograma tu cita existente antes de agendar una nueva.");
     } else {
-      navigate("/perfil/agendar_cita")
+      navigate("/perfil/agendar-cita")
     }
+  }
+
+  const handleReschedule = () => {
+    localStorage.setItem("reschedule", "true");
+    navigate("/perfil/agendar-cita")
   }
 
   const meses = {
@@ -70,7 +75,7 @@ export default function Dashboard() {
             title="Agendar cita"
             description="Solicita una nueva cita"
             imageBox
-            link="/perfil/agendar_cita"
+            link="/perfil/agendar-cita"
             onClick={handleAppointment}
           />
 
@@ -91,7 +96,7 @@ export default function Dashboard() {
                     Puedes reagendarla o cancelarla según tu disponibilidad.
                   </p>
                   <div className="flex w-full gap-6 my-6 justify-center">
-                    <button className="secondary-button text-base">
+                    <button className="secondary-button text-base" onClick={handleReschedule}>
                       Reagendar cita
                     </button>
                     <button className="secondary-button bg-red-500 hover:bg-red-600 text-base" onClick={deleteAppointment}>

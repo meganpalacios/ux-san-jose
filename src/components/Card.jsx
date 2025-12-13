@@ -4,7 +4,7 @@ export default function Card({ items, buttonName }) {
   const navigate = useNavigate();
   const bookWith = (doctor) => {
     localStorage.setItem("bookWith", doctor);
-    navigate("/perfil/agendar_cita");
+    navigate("/perfil/agendar-cita");
   };
   return (
     <div className="flex gap-y-8 gap-x-20 flex-wrap justify-center">
