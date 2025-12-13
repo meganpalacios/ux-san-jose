@@ -76,16 +76,6 @@ export default function Home() {
       <section>
         <h2 className="mb-10">Conoce nuestras instalaciones</h2>
         <Gallery
-          items={[
-            { src: "rimac.svg", alt: "Rímac" },
-            { src: "pacifico.svg", alt: "Pacífico" },
-            { src: "la_positiva.png", alt: "La Positiva" },
-            { src: "mapfre.webp", alt: "Mapfre", noPadding: true },
-            { src: "sanitas.jpg", alt: "Sanitas" },
-          ]}
-        />
-
-        <Gallery
           variant="secondary"
           items={[
             { src: "/instalaciones/fachada.jpg", alt: "Fachada" },

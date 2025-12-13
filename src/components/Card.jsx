@@ -1,4 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Card({ items, buttonName }) {
+  const navigate = useNavigate();
+  const bookWith = (doctor) => {
+    localStorage.setItem("bookWith", doctor);
+    navigate("/perfil/agendar_cita");
+  };
   return (
     <div className="flex gap-y-8 gap-x-20 flex-wrap justify-center">
       {items.map((item, index) => (
@@ -36,17 +43,17 @@ export default function Card({ items, buttonName }) {
             </div>
 
             {buttonName && item.link && (
-              <a
-                href={item.link}
+              <button
                 className="
                 shrink-0 px-4 py-2
                 rounded-full bg-blue-200 text-black 
                 text-sm md:text-base 
                 font-medium
                 hover:bg-blue-300 transition
-              ">
+              "
+                onClick={() => bookWith(item.id)}>
                 {buttonName || "Ver más"}
-              </a>
+              </button>
             )}
           </div>
         </article>

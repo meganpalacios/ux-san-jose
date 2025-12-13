@@ -1,0 +1,79 @@
+{
+  "doctors": [
+    {
+      "id": "carlos-jibaja",
+      "title": "Carlos Jibaja",
+      "specialty": "Ortodoncia",
+      "description": "Especialista en Ortodoncia con más de 10 años de experiencia en la corrección de la posición dental y mejora estética.",
+      "imgUrl": "/cards/ortodoncia.jpg",
+      "link": "/especialidades/ortodoncia",
+      "booked": [
+        { "date": "2025-12-18", "time": "09:00" },
+        { "date": "2026-01-07", "time": "12:00" },
+        { "date": "2026-02-03", "time": "09:00" }
+      ]
+    },
+    {
+      "id": "ana-martinez",
+      "title": "Ana Martínez",
+      "specialty": "Endodoncia",
+      "description": "Especialista en Endodoncia con amplia experiencia en tratamientos para salvar dientes naturales.",
+      "imgUrl": "/cards/endodoncia.jpg",
+      "link": "/especialidades/endodoncia",
+      "booked": [
+        { "date": "2025-12-19", "time": "08:30" },
+        { "date": "2025-12-19", "time": "10:00" },
+        { "date": "2026-01-23", "time": "09:00" },
+        { "date": "2026-02-06", "time": "15:30" }
+      ]
+    },
+    {
+      "id": "luis-gomez",
+      "title": "Luis Gómez",
+      "specialty": "Implantes dentales",
+      "description": "Especialista en Implantes Dentales con amplia experiencia en la recuperación de funcionalidad y estética de la sonrisa.",
+      "imgUrl": "/cards/implantes.jpg",
+      "link": "/especialidades/implantes-dentales",
+      "booked": [
+        { "date": "2025-12-17", "time": "16:00" },
+        { "date": "2026-01-29", "time": "16:00" },
+        { "date": "2026-01-29", "time": "17:30" }
+      ]
+    },
+    {
+      "id": "maria-rodriguez",
+      "title": "María Rodríguez",
+      "specialty": "Odontopediatría",
+      "description": "Especialista en Odontopediatría con un enfoque amigable para el cuidado de la salud bucal de los más pequeños.",
+      "imgUrl": "/cards/odontopediatria.jpg",
+      "link": "/especialidades/odontopediatria",
+      "booked": [
+        { "date": "2025-12-21", "time": "09:00" },
+        { "date": "2026-01-25", "time": "08:30" }
+      ]
+    },
+    {
+      "id": "sofia-lopez",
+      "title": "Sofía López",
+      "specialty": "Periodoncia",
+      "description": "Especialista en Periodoncia con amplia experiencia en el mantenimiento de la salud de las encías y prevención de enfermedades periodontales.",
+      "imgUrl": "/cards/periodoncia.jpg",
+      "link": "/especialidades/periodoncia",
+      "booked": [
+        { "date": "2025-12-20", "time": "15:00" },
+        { "date": "2026-02-05", "time": "15:30" }
+      ]
+    },
+    {
+      "id": "miguel-fernandez",
+      "title": "Miguel Fernández",
+      "specialty": "Cirugía dental",
+      "description": "Cirujano dental con gran experiencia en procedimientos quirúrgicos para mejorar la salud bucal y el bienestar general.",
+      "imgUrl": "/cards/cirugia.jpg",
+      "link": "/especialidades/cirugia",
+      "booked": [
+        { "date": "2026-01-18", "time": "17:30" }
+      ]
+    }
+  ]
+}

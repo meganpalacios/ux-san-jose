@@ -6,6 +6,7 @@ import Testimonial from "../components/Testimonial";
 const cardItems = [
   {
     title: "Carlos Jibaja",
+    id: "carlos-jibaja",
     description:
       "Especialista en Ortodoncia con más de 10 años de experiencia en la corrección de la posición dental y mejora estética.",
     imgUrl: "/doctores/carlos-jibaja.jpg",
@@ -13,6 +14,7 @@ const cardItems = [
   },
   {
     title: "Ana Martínez",
+    id: "ana-martinez",
     description:
       "Especialista en Endodoncia con amplia experiencia en tratamientos para salvar dientes naturales.",
     imgUrl: "/doctores/ana-martinez.jpeg",
@@ -20,6 +22,7 @@ const cardItems = [
   },
   {
     title: "Luis Gómez",
+    id: "luis-gomez",
     description:
       "Especialista en Implantes Dentales con amplia experiencia en la recuperación de funcionalidad y estética de la sonrisa.",
     imgUrl: "/doctores/luis-gomez.jpg",
@@ -27,6 +30,7 @@ const cardItems = [
   },
   {
     title: "María Rodríguez",
+    id: "maria-rodriguez",
     description:
       "Especialista en Odontopediatría con un enfoque amigable para el cuidado de la salud bucal de los más pequeños.",
     imgUrl: "/doctores/maria-rodriguez.jpg",
@@ -34,6 +38,7 @@ const cardItems = [
   },
   {
     title: "Sofía López",
+    id: "sofia-lopez",
     description:
       "Especialista en Periodoncia con amplia experiencia en el mantenimiento de la salud de las encías y prevención de enfermedades periodontales.",
     imgUrl: "/doctores/sofia-lopez.jpg",
@@ -41,6 +46,7 @@ const cardItems = [
   },
   {
     title: "Miguel Fernández",
+    id: "miguel-fernandez",
     description:
       "Cirujano dental con gran experiencia en procedimientos quirúrgicos para mejorar la salud bucal y el bienestar general.",
     imgUrl: "/doctores/miguel-fernandez.jpeg",

@@ -3,12 +3,15 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Instalaciones from "./pages/Instalaciones";
 import Doctores from "./pages/Doctores";
-import Especialidades from "./pages/Especialidades";
+import Especialidades from "./pages/especialidades";
 import Agendar from "./pages/Agendar";
 import CrearCuenta from "./pages/CrearCuenta";
 import Ingresar from "./pages/Ingresar";
 import Layout from "./components/Layout";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/perfil";
+import AgendarCita from "./pages/perfil/AgendarCita";
+import Historial from "./pages/perfil/Historial";
+import Ortodoncia from "./pages/especialidades/Ortodoncia";
 
 function App() {
   return (
@@ -19,10 +22,13 @@ function App() {
           <Route path="/instalaciones" element={<Instalaciones />} />
           <Route path="/doctores" element={<Doctores />} />
           <Route path="/especialidades" element={<Especialidades />} />
+          <Route path="/especialidades/ortodoncia" element={<Ortodoncia />} />
           <Route path="/agendar" element={<Agendar />} />
           <Route path="/crear-cuenta" element={<CrearCuenta />} />
           <Route path="/iniciar-sesion" element={<Ingresar />} />
           <Route path="/perfil" element={<Dashboard />} />
+          <Route path="/perfil/agendar_cita" element={<AgendarCita />} />
+          <Route path="/perfil/historial" element={<Historial />} />
         </Route>
       </Routes>
     </Router>

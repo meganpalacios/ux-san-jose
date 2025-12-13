@@ -5,6 +5,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import LogoutIcon from "@mui/icons-material/Logout";
 import clsx from "clsx";
 
 export default function Navigation() {
@@ -58,14 +59,23 @@ export default function Navigation() {
           </a>
         </li>
         {user ? (
-          <li>
-            <a
-              href="/perfil"
-              className="text-blue-500 hover:text-blue-600 cursor-pointer transition-colors">
-              <AccountCircleIcon fontSize="large" />
-              <span className="ml-2">{user.displayName}</span>
-            </a>
-          </li>
+          <div className="flex items-center gap-4">
+            <li>
+              <a
+                href="/perfil"
+                className="text-blue-400 hover:text-blue-600 cursor-pointer transition-colors">
+                <AccountCircleIcon fontSize="large" />
+                <span className="ml-2">{user.displayName}</span>
+              </a>
+            </li>
+            <li>
+              <button
+                className="flex items-center gap-2 hover:text-blue-400"
+                onClick={() => auth.signOut()}>
+                <LogoutIcon />
+              </button>
+            </li>
+          </div>
         ) : (
           <li>
             <a className="main-button" href="/iniciar-sesion">
@@ -144,7 +154,7 @@ export default function Navigation() {
             <li>
               <a
                 href="/perfil"
-                className="text-blue-500 hover:text-blue-600 cursor-pointer transition-colors">
+                className="text-blue-400 hover:text-blue-600 cursor-pointer transition-colors">
                 <AccountCircleIcon fontSize="large" />
                 <span className="ml-2">{user.displayName}</span>
               </a>
