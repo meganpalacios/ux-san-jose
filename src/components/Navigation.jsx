@@ -26,7 +26,7 @@ export default function Navigation() {
       <ul className="hidden md:flex w-full p-6 justify-between items-center gap-6">
         <li>
           <a href="/">
-            <img src="/vite.svg" className="logo" alt="Vite logo" />
+            <img src="/logo.png" className="logo" alt="Inicio - Clínica Dental San José" />
           </a>
         </li>
 
@@ -87,7 +87,7 @@ export default function Navigation() {
 
       <div className="md:hidden flex justify-between items-center p-6">
         <a href="/">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
+          <img src="/logo.png" className="logo" alt="Inicio - Clínica Dental San José" />
         </a>
         <MenuIcon
           className="cursor-pointer"
